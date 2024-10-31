@@ -4,3 +4,20 @@ jenkins:
       password: "Devl@1234"
     additionalPlugins:
       - job-dsl
+      - docker-workflow
+    sidecars:
+      additionalSidecarContainers:
+        - name: jenkins
+          image: docker:dind
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: dockersock
+              mountPath: /var/run
+    containerEnv:
+      - name: DOCKER_HOST
+        value: "tcp://localhost:2375"
+  persistence:
+    volumes:
+      - name: dockersock
+        emptyDir: {}
