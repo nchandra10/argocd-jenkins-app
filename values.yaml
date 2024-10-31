@@ -29,9 +29,7 @@ jenkins:
           repository: docker
           tag: dind-rootless
         privileged: true
-        volumeMounts:
-          - name: dockersock
-            mountPath: /var/run
+        args: ""
   persistence:
     volumes:
       - name: dockersock
