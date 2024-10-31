@@ -15,14 +15,14 @@ jenkins:
             privileged: true
           volumeMounts:
             - name: dockersock
-              mountPath: /var/run
+              mountPath: /var/user/1000/docker.sock
     containerEnv:
       - name: DOCKER_HOST
         value: "tcp://localhost:2375"
   agent:
     volumes:
       - type: EmptyDir
-        mountPath: /var/run/docker.sock
+        mountPath: /var/user/1000/docker.sock
     additionalContainers:
       - sideContainerName: docker
         image:
