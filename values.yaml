@@ -1,5 +1,7 @@
 jenkins:
   controller:
+    containerSecurityContext:
+      allowPrivilegeEscalation: true
     admin:
       password: "Devl@1234"
     additionalPlugins:
