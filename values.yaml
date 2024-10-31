@@ -21,8 +21,8 @@ jenkins:
         value: "tcp://localhost:2375"
   agent:
     volumes:
-      - name: dockersock
-        emptyDir: {}
+      - type: EmptyDir
+        mountPath: /var/run
     additionalContainers:
       - sideContainerName: docker
         image:
