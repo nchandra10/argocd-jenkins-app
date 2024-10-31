@@ -18,7 +18,7 @@ jenkins:
               mountPath: /var/user/1000/docker.sock
     containerEnv:
       - name: DOCKER_HOST
-        value: "tcp://localhost:2375"
+        value: "tcp://localhost:2376"
   agent:
     volumes:
       - type: EmptyDir
@@ -32,7 +32,7 @@ jenkins:
         args: ""
     envVars:
       - name: DOCKER_HOST
-        value: "tcp://localhost:2375"
+        value: "tcp://localhost:2376"
   persistence:
     volumes:
       - name: dockersock
