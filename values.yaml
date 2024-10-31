@@ -9,7 +9,7 @@ jenkins:
       - docker-workflow
     sidecars:
       additionalSidecarContainers:
-        - name: jenkins
+        - name: dind
           image: docker:dind
           securityContext:
             privileged: true
