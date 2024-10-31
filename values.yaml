@@ -22,7 +22,7 @@ jenkins:
   agent:
     volumes:
       - type: EmptyDir
-        mountPath: /var/run
+        mountPath: /var/run/docker.sock
     additionalContainers:
       - sideContainerName: docker
         image:
