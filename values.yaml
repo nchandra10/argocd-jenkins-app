@@ -7,9 +7,6 @@ jenkins:
     additionalPlugins:
       - job-dsl
       - docker-workflow
-    containerEnv:
-      - name: DOCKER_HOST
-        value: "tcp://localhost:2376"
   agent:
     additionalContainers:
       - sideContainerName: docker
