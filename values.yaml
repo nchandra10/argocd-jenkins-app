@@ -20,4 +20,4 @@ jenkins:
         args: ""
     envVars:
       - name: DOCKER_HOST
-        value: "unix:///var/user/1000/docker.sock"
+        value: "unix:///var/run/docker.sock"
