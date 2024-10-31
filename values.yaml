@@ -7,22 +7,10 @@ jenkins:
     additionalPlugins:
       - job-dsl
       - docker-workflow
-    sidecars:
-      additionalSidecarContainers:
-        - name: dind
-          image: docker:dind-rootless
-          securityContext:
-            privileged: true
-          volumeMounts:
-            - name: dockersock
-              mountPath: /var/user/1000/docker.sock
     containerEnv:
       - name: DOCKER_HOST
         value: "tcp://localhost:2376"
   agent:
-    volumes:
-      - type: EmptyDir
-        mountPath: /var/user/1000/docker.sock
     additionalContainers:
       - sideContainerName: docker
         image:
@@ -32,8 +20,4 @@ jenkins:
         args: ""
     envVars:
       - name: DOCKER_HOST
-        value: "tcp://localhost:2376"
-  persistence:
-    volumes:
-      - name: dockersock
-        emptyDir: {}
+        value: "unix:///var/user/1000/docker.sock"
