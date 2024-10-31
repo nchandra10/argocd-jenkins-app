@@ -15,7 +15,7 @@ jenkins:
       - sideContainerName: docker
         image:
           repository: docker
-          tag: dind-rootless
+          tag: dind
         privileged: true
         args: ""
     envVars:
