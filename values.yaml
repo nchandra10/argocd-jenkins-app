@@ -3,7 +3,7 @@ jenkins:
     containerSecurityContext:
       allowPrivilegeEscalation: true
     admin:
-      password: "Devl@1234"
+      password: "admin"
     additionalPlugins:
       - job-dsl
       - docker-workflow
