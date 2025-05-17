@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - values.yaml
     path: .
-    repoURL: https://github.com/deepaks374/argocd-jenkins-app.git
+    repoURL: https://github.com/nchandra10/argocd-jenkins-app.git
     targetRevision: HEAD
   syncPolicy:
     automated:
